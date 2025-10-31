@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETL & Industrial Engineering Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1>Portfolio</h1>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#case-studies">Case Studies</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>ETL Engineer & Industrial Consultant</h2>
+            <p>Transforming data into actionable insights and optimizing operational efficiency</p>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About</h2>
+            <p>Specialized in ETL pipelines, data warehousing, and industrial process optimization with a proven track record of delivering measurable improvements in efficiency and cost reduction.</p>
+        </div>
+    </section>
+
+    <section id="case-studies" class="section bg-light">
+        <div class="container">
+            <h2>Case Studies</h2>
+
+            <!-- Case Study 1: Supply Chain ETL -->
+            <div class="case-study">
+                <h3>📊 Supply Chain ETL Data Pipeline Optimization</h3>
+                <div class="case-study-header">
+                    <span class="tag">ETL</span>
+                    <span class="tag">Data Engineering</span>
+                    <span class="tag">Python</span>
+                </div>
+
+                <div class="case-content">
+                    <div class="problem">
+                        <h4>Challenge</h4>
+                        <p>A retail company was struggling with fragmented supply chain data across 15+ sources (ERP, WMS, TMS, suppliers). Daily ETL processes took 8+ hours, causing delayed reporting and poor inventory decisions.</p>
+                    </div>
+
+                    <div class="solution">
+                        <h4>Solution</h4>
+                        <ul>
+                            <li>Designed & implemented Apache Airflow-based ETL pipeline with parallel processing</li>
+                            <li>Built data quality framework with automated validation rules</li>
+                            <li>Created dimensional data warehouse using star schema (5 fact tables, 12 dimensions)</li>
+                            <li>Implemented incremental loading with CDC for real-time updates</li>
+                        </ul>
+                    </div>
+
+                    <div class="results">
+                        <h4>Results</h4>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">85%</div>
+                                <div class="metric-label">Processing Time Reduction</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">99.7%</div>
+                                <div class="metric-label">Data Accuracy</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">$1.2M</div>
+                                <div class="metric-label">Annual Savings</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="visualization">
+                        <h4>ETL Pipeline Performance</h4>
+                        <div class="chart-controls">
+                            <button class="chart-btn active" onclick="updateETLChart('time')">Processing Time</button>
+                            <button class="chart-btn" onclick="updateETLChart('volume')">Data Volume</button>
+                            <button class="chart-btn" onclick="updateETLChart('quality')">Data Quality</button>
+                        </div>
+                        <canvas id="etlChart"></canvas>
+                    </div>
+
+                    <div class="tech-stack">
+                        <h4>Technologies</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Apache Airflow</span>
+                            <span class="tech-tag">Python (Pandas, SQLAlchemy)</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">AWS (S3, Redshift)</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">dbt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 2: Manufacturing Optimization -->
+            <div class="case-study">
+                <h3>🏭 Manufacturing Line Efficiency Consulting</h3>
+                <div class="case-study-header">
+                    <span class="tag">Industrial Engineering</span>
+                    <span class="tag">Process Optimization</span>
+                    <span class="tag">Consulting</span>
+                </div>
+
+                <div class="case-content">
+                    <div class="problem">
+                        <h4>Challenge</h4>
+                        <p>Automotive parts manufacturer experiencing 23% downtime on assembly lines, missing production targets by 15-20%, and high defect rates (4.2%) leading to $800K quarterly losses.</p>
+                    </div>
+
+                    <div class="solution">
+                        <h4>Solution</h4>
+                        <ul>
+                            <li>Conducted time-motion studies and value stream mapping across 3 production lines</li>
+                            <li>Implemented lean manufacturing principles (5S, Kaizen, SMED)</li>
+                            <li>Redesigned workstation layouts reducing travel time by 40%</li>
+                            <li>Deployed IoT sensors for real-time OEE monitoring</li>
+                            <li>Trained 45 operators on standardized work procedures</li>
+                        </ul>
+                    </div>
+
+                    <div class="results">
+                        <h4>Results (6 months post-implementation)</h4>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">31%</div>
+                                <div class="metric-label">Throughput Increase</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">68%</div>
+                                <div class="metric-label">Downtime Reduction</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">1.1%</div>
+                                <div class="metric-label">Defect Rate (from 4.2%)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="visualization">
+                        <h4>OEE Dashboard - Interactive Performance Metrics</h4>
+                        <div class="oee-controls">
+                            <label for="lineSelect">Production Line:</label>
+                            <select id="lineSelect" onchange="updateOEEChart()">
+                                <option value="line1">Line 1 - Engine Parts</option>
+                                <option value="line2">Line 2 - Transmission</option>
+                                <option value="line3">Line 3 - Assembly</option>
+                            </select>
+                        </div>
+                        <canvas id="oeeChart"></canvas>
+
+                        <div class="oee-breakdown">
+                            <h4>OEE Components (Click to explore)</h4>
+                            <canvas id="oeeBreakdown"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="tech-stack">
+                        <h4>Methods & Tools</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Lean Manufacturing</span>
+                            <span class="tech-tag">Six Sigma (DMAIC)</span>
+                            <span class="tech-tag">Value Stream Mapping</span>
+                            <span class="tech-tag">Time Studies</span>
+                            <span class="tech-tag">IoT/IIoT</span>
+                            <span class="tech-tag">Tableau</span>
+                            <span class="tech-tag">Arena Simulation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>ETL & Data Engineering</h3>
+                    <ul>
+                        <li>ETL Pipeline Design & Development</li>
+                        <li>Data Warehousing (Kimball/Inmon)</li>
+                        <li>Apache Airflow, Spark, Kafka</li>
+                        <li>SQL & NoSQL Databases</li>
+                        <li>Cloud Platforms (AWS, Azure, GCP)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Industrial Engineering</h3>
+                    <ul>
+                        <li>Process Optimization & Lean Manufacturing</li>
+                        <li>Six Sigma (DMAIC/DMADV)</li>
+                        <li>Capacity Planning & Forecasting</li>
+                        <li>Facility Layout & Material Flow</li>
+                        <li>OEE & KPI Development</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Consulting & Analysis</h3>
+                    <ul>
+                        <li>Stakeholder Management</li>
+                        <li>Business Process Reengineering</li>
+                        <li>Cost-Benefit Analysis</li>
+                        <li>Change Management</li>
+                        <li>Project Management (PMP)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Portfolio. Built with passion for data and efficiency.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
