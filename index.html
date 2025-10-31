@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETL & Industrial Engineering Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1>Portfolio</h1>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#case-studies">Case Studies</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>ETL Engineer & Industrial Consultant</h2>
+            <p>Transforming data into actionable insights and optimizing operational efficiency</p>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About</h2>
+            <p>Specialized in ETL pipelines, data warehousing, and industrial process optimization with a proven track record of delivering measurable improvements in efficiency and cost reduction.</p>
+        </div>
+    </section>
+
+    <section id="case-studies" class="section bg-light">
+        <div class="container">
+            <h2>Case Studies</h2>
+
+            <!-- Case Study 1: Supply Chain ETL -->
+            <div class="case-study">
+                <h3>📊 Supply Chain ETL Data Pipeline Optimization</h3>
+                <div class="case-study-header">
+                    <span class="tag">ETL</span>
+                    <span class="tag">Data Engineering</span>
+                    <span class="tag">Python</span>
+                </div>
+
+                <div class="case-content">
+                    <div class="problem">
+                        <h4>Challenge</h4>
+                        <p>A retail company was struggling with fragmented supply chain data across 15+ sources (ERP, WMS, TMS, suppliers). Daily ETL processes took 8+ hours, causing delayed reporting and poor inventory decisions.</p>
+                    </div>
+
+                    <div class="solution">
+                        <h4>Solution</h4>
+                        <ul>
+                            <li>Designed & implemented Apache Airflow-based ETL pipeline with parallel processing</li>
+                            <li>Built data quality framework with automated validation rules</li>
+                            <li>Created dimensional data warehouse using star schema (5 fact tables, 12 dimensions)</li>
+                            <li>Implemented incremental loading with CDC for real-time updates</li>
+                        </ul>
+                    </div>
+
+                    <div class="results">
+                        <h4>Results</h4>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">85%</div>
+                                <div class="metric-label">Processing Time Reduction</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">99.7%</div>
+                                <div class="metric-label">Data Accuracy</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">$1.2M</div>
+                                <div class="metric-label">Annual Savings</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="visualization">
+                        <h4>ETL Pipeline Performance</h4>
+                        <div class="chart-controls">
+                            <button class="chart-btn active" onclick="updateETLChart('time')">Processing Time</button>
+                            <button class="chart-btn" onclick="updateETLChart('volume')">Data Volume</button>
+                            <button class="chart-btn" onclick="updateETLChart('quality')">Data Quality</button>
+                        </div>
+                        <canvas id="etlChart"></canvas>
+                    </div>
+
+                    <div class="tech-stack">
+                        <h4>Technologies</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Apache Airflow</span>
+                            <span class="tech-tag">Python (Pandas, SQLAlchemy)</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">AWS (S3, Redshift)</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">dbt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 2: Manufacturing IoT Optimization -->
+            <div class="case-study">
+                <h3>🏭 IoT-Based Press Monitoring & Optimization System</h3>
+                <div class="case-study-header">
+                    <span class="tag">IoT</span>
+                    <span class="tag">Raspberry Pi</span>
+                    <span class="tag">Industrial Engineering</span>
+                    <span class="tag">Python</span>
+                </div>
+
+                <div class="case-content">
+                    <div class="problem">
+                        <h4>Challenge</h4>
+                        <p>Manufacturing facility with 12 hydraulic presses had zero visibility into machine performance. Production managers relied on manual logbooks, resulting in unknown downtime causes, frequent overheating issues, inconsistent cure times, and reactive maintenance costing $800K quarterly in lost production.</p>
+                    </div>
+
+                    <div class="solution">
+                        <h4>Solution: Raspberry Pi IoT Implementation</h4>
+                        <ul>
+                            <li><strong>Deployed Raspberry Pi 4 computers to each of 12 presses</strong> with custom sensor integration</li>
+                            <li><strong>Real-time metrics tracking:</strong>
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>Downtime events with automatic categorization (mechanical, material, changeover)</li>
+                                    <li>Temperature monitoring (hydraulic fluid & press platens) with alert thresholds</li>
+                                    <li>Bump count and force measurement for quality control</li>
+                                    <li>Cure time tracking with automatic variance detection</li>
+                                    <li>Cycle time, setup time, and OEE calculations</li>
+                                </ul>
+                            </li>
+                            <li>Built Python-based data collection system with MQTT protocol for low-latency communication</li>
+                            <li>Developed real-time dashboard using Grafana with alerts sent to production managers</li>
+                            <li>Implemented SQLite edge computing for local data buffering during network issues</li>
+                            <li>Created ETL pipeline to PostgreSQL database for historical analysis and reporting</li>
+                        </ul>
+                    </div>
+
+                    <div class="results">
+                        <h4>Results (6 months post-implementation)</h4>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">42%</div>
+                                <div class="metric-label">Downtime Reduction</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">78%</div>
+                                <div class="metric-label">Faster Issue Detection</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">$620K</div>
+                                <div class="metric-label">Annual Savings</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">24/7</div>
+                                <div class="metric-label">Automated Monitoring</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="visualization">
+                        <h4>Press Metrics Dashboard - Select Press & Metric</h4>
+                        <div class="oee-controls">
+                            <label for="pressSelect">Press:</label>
+                            <select id="pressSelect" onchange="updatePressChart()">
+                                <option value="press1">Press 1</option>
+                                <option value="press2">Press 2</option>
+                                <option value="press3">Press 3</option>
+                                <option value="press4">Press 4</option>
+                            </select>
+                            <label for="metricSelect" style="margin-left: 1rem;">Metric:</label>
+                            <select id="metricSelect" onchange="updatePressChart()">
+                                <option value="downtime">Downtime Analysis</option>
+                                <option value="temperature">Temperature Monitoring</option>
+                                <option value="cureTime">Cure Time Consistency</option>
+                            </select>
+                        </div>
+                        <canvas id="pressChart"></canvas>
+
+                        <div class="oee-breakdown">
+                            <h4>Real-Time Press Status (Last 24 Hours)</h4>
+                            <canvas id="pressStatus"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="tech-stack">
+                        <h4>Technologies & Implementation</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Raspberry Pi 4</span>
+                            <span class="tech-tag">Python (GPIO, MQTT)</span>
+                            <span class="tech-tag">Temperature Sensors (DS18B20)</span>
+                            <span class="tech-tag">Pressure Transducers</span>
+                            <span class="tech-tag">SQLite & PostgreSQL</span>
+                            <span class="tech-tag">Grafana</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Node-RED</span>
+                        </div>
+                    </div>
+
+                    <div class="solution" style="margin-top: 1.5rem; border-left: 4px solid var(--success-color); padding-left: 1rem; background-color: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 4px;">
+                        <h4 style="color: var(--success-color); margin-top: 0;">Key Innovation</h4>
+                        <p style="color: var(--text-dark); margin-bottom: 0;">By implementing edge computing on each Raspberry Pi, the system continued collecting critical data even during network outages. This ensured 99.8% data capture rate and enabled immediate local alerts for temperature exceedances, preventing equipment damage before network connectivity was restored.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>ETL & Data Engineering</h3>
+                    <ul>
+                        <li>ETL Pipeline Design & Development</li>
+                        <li>Data Warehousing (Kimball/Inmon)</li>
+                        <li>Apache Airflow, Spark, Kafka</li>
+                        <li>SQL & NoSQL Databases</li>
+                        <li>Cloud Platforms (AWS, Azure, GCP)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Industrial Engineering & IoT</h3>
+                    <ul>
+                        <li>IoT/IIoT Implementation (Raspberry Pi, Arduino)</li>
+                        <li>Process Optimization & Lean Manufacturing</li>
+                        <li>Real-time Monitoring & SCADA Systems</li>
+                        <li>Six Sigma (DMAIC/DMADV)</li>
+                        <li>OEE & KPI Development</li>
+                        <li>Predictive Maintenance</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Consulting & Analysis</h3>
+                    <ul>
+                        <li>Stakeholder Management</li>
+                        <li>Business Process Reengineering</li>
+                        <li>Cost-Benefit Analysis</li>
+                        <li>Change Management</li>
+                        <li>Project Management (PMP)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Portfolio. Built with passion for data and efficiency.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
