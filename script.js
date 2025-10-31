@@ -41,80 +41,266 @@ const etlData = {
     }
 };
 
-// OEE Chart Data for different production lines
-const oeeData = {
-    line1: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-        datasets: [{
-            label: 'Before Optimization',
-            data: [58, 61, 59, 62, 60, 63],
-            backgroundColor: 'rgba(239, 68, 68, 0.7)',
-            borderColor: 'rgba(239, 68, 68, 1)',
-            borderWidth: 2
-        }, {
-            label: 'After Optimization',
-            data: [null, null, null, 75, 82, 85],
-            backgroundColor: 'rgba(16, 185, 129, 0.7)',
-            borderColor: 'rgba(16, 185, 129, 1)',
-            borderWidth: 2
-        }]
+// Press Metrics Data for IoT monitoring
+const pressMetricsData = {
+    press1: {
+        downtime: {
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+            datasets: [{
+                label: 'Mechanical (hours)',
+                data: [12, 11, 8, 6, 5, 4],
+                backgroundColor: 'rgba(239, 68, 68, 0.7)',
+            }, {
+                label: 'Material (hours)',
+                data: [8, 7, 5, 4, 3, 2],
+                backgroundColor: 'rgba(245, 158, 11, 0.7)',
+            }, {
+                label: 'Changeover (hours)',
+                data: [6, 5, 5, 4, 3, 3],
+                backgroundColor: 'rgba(59, 130, 246, 0.7)',
+            }]
+        },
+        temperature: {
+            labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
+            datasets: [{
+                label: 'Hydraulic Fluid (°F)',
+                data: [145, 152, 168, 175, 172, 158],
+                borderColor: 'rgba(239, 68, 68, 1)',
+                backgroundColor: 'rgba(239, 68, 68, 0.2)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4
+            }, {
+                label: 'Press Platen (°F)',
+                data: [320, 325, 345, 355, 350, 335],
+                borderColor: 'rgba(245, 158, 11, 1)',
+                backgroundColor: 'rgba(245, 158, 11, 0.2)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        cureTime: {
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+            datasets: [{
+                label: 'Average Cure Time (seconds)',
+                data: [145, 143, 140, 138, 137, 136],
+                borderColor: 'rgba(16, 185, 129, 1)',
+                backgroundColor: 'rgba(16, 185, 129, 0.2)',
+                borderWidth: 3,
+                fill: true,
+                tension: 0.4
+            }, {
+                label: 'Target (seconds)',
+                data: [140, 140, 140, 140, 140, 140],
+                borderColor: 'rgba(59, 130, 246, 1)',
+                borderDash: [5, 5],
+                borderWidth: 2,
+                fill: false
+            }]
+        }
     },
-    line2: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-        datasets: [{
-            label: 'Before Optimization',
-            data: [52, 55, 53, 56, 54, 57],
-            backgroundColor: 'rgba(239, 68, 68, 0.7)',
-            borderColor: 'rgba(239, 68, 68, 1)',
-            borderWidth: 2
-        }, {
-            label: 'After Optimization',
-            data: [null, null, null, 68, 76, 81],
-            backgroundColor: 'rgba(16, 185, 129, 0.7)',
-            borderColor: 'rgba(16, 185, 129, 1)',
-            borderWidth: 2
-        }]
+    press2: {
+        downtime: {
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+            datasets: [{
+                label: 'Mechanical (hours)',
+                data: [15, 13, 10, 8, 6, 5],
+                backgroundColor: 'rgba(239, 68, 68, 0.7)',
+            }, {
+                label: 'Material (hours)',
+                data: [10, 9, 7, 5, 4, 3],
+                backgroundColor: 'rgba(245, 158, 11, 0.7)',
+            }, {
+                label: 'Changeover (hours)',
+                data: [7, 6, 5, 5, 4, 3],
+                backgroundColor: 'rgba(59, 130, 246, 0.7)',
+            }]
+        },
+        temperature: {
+            labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
+            datasets: [{
+                label: 'Hydraulic Fluid (°F)',
+                data: [148, 155, 170, 178, 175, 160],
+                borderColor: 'rgba(239, 68, 68, 1)',
+                backgroundColor: 'rgba(239, 68, 68, 0.2)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4
+            }, {
+                label: 'Press Platen (°F)',
+                data: [318, 323, 342, 352, 348, 332],
+                borderColor: 'rgba(245, 158, 11, 1)',
+                backgroundColor: 'rgba(245, 158, 11, 0.2)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        cureTime: {
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+            datasets: [{
+                label: 'Average Cure Time (seconds)',
+                data: [148, 146, 143, 141, 140, 139],
+                borderColor: 'rgba(16, 185, 129, 1)',
+                backgroundColor: 'rgba(16, 185, 129, 0.2)',
+                borderWidth: 3,
+                fill: true,
+                tension: 0.4
+            }, {
+                label: 'Target (seconds)',
+                data: [140, 140, 140, 140, 140, 140],
+                borderColor: 'rgba(59, 130, 246, 1)',
+                borderDash: [5, 5],
+                borderWidth: 2,
+                fill: false
+            }]
+        }
     },
-    line3: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-        datasets: [{
-            label: 'Before Optimization',
-            data: [65, 67, 66, 68, 67, 69],
-            backgroundColor: 'rgba(239, 68, 68, 0.7)',
-            borderColor: 'rgba(239, 68, 68, 1)',
-            borderWidth: 2
-        }, {
-            label: 'After Optimization',
-            data: [null, null, null, 78, 86, 89],
-            backgroundColor: 'rgba(16, 185, 129, 0.7)',
-            borderColor: 'rgba(16, 185, 129, 1)',
-            borderWidth: 2
-        }]
+    press3: {
+        downtime: {
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+            datasets: [{
+                label: 'Mechanical (hours)',
+                data: [10, 9, 7, 5, 4, 3],
+                backgroundColor: 'rgba(239, 68, 68, 0.7)',
+            }, {
+                label: 'Material (hours)',
+                data: [6, 5, 4, 3, 2, 2],
+                backgroundColor: 'rgba(245, 158, 11, 0.7)',
+            }, {
+                label: 'Changeover (hours)',
+                data: [5, 5, 4, 4, 3, 2],
+                backgroundColor: 'rgba(59, 130, 246, 0.7)',
+            }]
+        },
+        temperature: {
+            labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
+            datasets: [{
+                label: 'Hydraulic Fluid (°F)',
+                data: [142, 150, 165, 172, 168, 155],
+                borderColor: 'rgba(239, 68, 68, 1)',
+                backgroundColor: 'rgba(239, 68, 68, 0.2)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4
+            }, {
+                label: 'Press Platen (°F)',
+                data: [315, 320, 340, 348, 345, 328],
+                borderColor: 'rgba(245, 158, 11, 1)',
+                backgroundColor: 'rgba(245, 158, 11, 0.2)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        cureTime: {
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+            datasets: [{
+                label: 'Average Cure Time (seconds)',
+                data: [142, 140, 138, 137, 136, 136],
+                borderColor: 'rgba(16, 185, 129, 1)',
+                backgroundColor: 'rgba(16, 185, 129, 0.2)',
+                borderWidth: 3,
+                fill: true,
+                tension: 0.4
+            }, {
+                label: 'Target (seconds)',
+                data: [140, 140, 140, 140, 140, 140],
+                borderColor: 'rgba(59, 130, 246, 1)',
+                borderDash: [5, 5],
+                borderWidth: 2,
+                fill: false
+            }]
+        }
+    },
+    press4: {
+        downtime: {
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+            datasets: [{
+                label: 'Mechanical (hours)',
+                data: [14, 12, 9, 7, 5, 4],
+                backgroundColor: 'rgba(239, 68, 68, 0.7)',
+            }, {
+                label: 'Material (hours)',
+                data: [9, 8, 6, 5, 3, 3],
+                backgroundColor: 'rgba(245, 158, 11, 0.7)',
+            }, {
+                label: 'Changeover (hours)',
+                data: [6, 6, 5, 4, 4, 3],
+                backgroundColor: 'rgba(59, 130, 246, 0.7)',
+            }]
+        },
+        temperature: {
+            labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
+            datasets: [{
+                label: 'Hydraulic Fluid (°F)',
+                data: [147, 154, 169, 176, 173, 159],
+                borderColor: 'rgba(239, 68, 68, 1)',
+                backgroundColor: 'rgba(239, 68, 68, 0.2)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4
+            }, {
+                label: 'Press Platen (°F)',
+                data: [322, 327, 346, 354, 351, 336],
+                borderColor: 'rgba(245, 158, 11, 1)',
+                backgroundColor: 'rgba(245, 158, 11, 0.2)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        cureTime: {
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+            datasets: [{
+                label: 'Average Cure Time (seconds)',
+                data: [146, 144, 141, 139, 138, 137],
+                borderColor: 'rgba(16, 185, 129, 1)',
+                backgroundColor: 'rgba(16, 185, 129, 0.2)',
+                borderWidth: 3,
+                fill: true,
+                tension: 0.4
+            }, {
+                label: 'Target (seconds)',
+                data: [140, 140, 140, 140, 140, 140],
+                borderColor: 'rgba(59, 130, 246, 1)',
+                borderDash: [5, 5],
+                borderWidth: 2,
+                fill: false
+            }]
+        }
     }
 };
 
-// OEE Breakdown Data (Availability × Performance × Quality)
-const oeeBreakdownData = {
-    labels: ['Availability', 'Performance', 'Quality'],
+// Press Status Data (for bar chart showing current status)
+const pressStatusData = {
+    labels: ['Press 1', 'Press 2', 'Press 3', 'Press 4', 'Press 5', 'Press 6', 'Press 7', 'Press 8'],
     datasets: [{
-        label: 'Before (%)',
-        data: [75, 82, 95],
+        label: 'Running Time (hours)',
+        data: [18.5, 17.2, 19.1, 16.8, 18.9, 17.5, 19.3, 18.1],
+        backgroundColor: 'rgba(16, 185, 129, 0.7)',
+        borderColor: 'rgba(16, 185, 129, 1)',
+        borderWidth: 2
+    }, {
+        label: 'Downtime (hours)',
+        data: [3.5, 4.8, 2.9, 5.2, 3.1, 4.5, 2.7, 3.9],
         backgroundColor: 'rgba(239, 68, 68, 0.7)',
         borderColor: 'rgba(239, 68, 68, 1)',
         borderWidth: 2
     }, {
-        label: 'After (%)',
-        data: [92, 94, 98],
-        backgroundColor: 'rgba(16, 185, 129, 0.7)',
-        borderColor: 'rgba(16, 185, 129, 1)',
+        label: 'Idle (hours)',
+        data: [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0],
+        backgroundColor: 'rgba(156, 163, 175, 0.7)',
+        borderColor: 'rgba(156, 163, 175, 1)',
         borderWidth: 2
     }]
 };
 
 // Chart instances
 let etlChart;
-let oeeChart;
-let oeeBreakdownChart;
+let pressChart;
+let pressStatusChart;
 
 // Initialize charts when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -168,12 +354,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Initialize OEE Chart
-    const oeeCtx = document.getElementById('oeeChart');
-    if (oeeCtx) {
-        oeeChart = new Chart(oeeCtx, {
-            type: 'line',
-            data: oeeData.line1,
+    // Initialize Press Metrics Chart
+    const pressCtx = document.getElementById('pressChart');
+    if (pressCtx) {
+        pressChart = new Chart(pressCtx, {
+            type: 'bar',
+            data: pressMetricsData.press1.downtime,
             options: {
                 responsive: true,
                 maintainAspectRatio: true,
@@ -184,19 +370,22 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     title: {
                         display: true,
-                        text: 'OEE Performance Over Time (%)',
+                        text: 'Downtime Analysis by Category',
                         font: {
                             size: 16
                         }
                     }
                 },
                 scales: {
+                    x: {
+                        stacked: true,
+                    },
                     y: {
+                        stacked: true,
                         beginAtZero: true,
-                        max: 100,
                         title: {
                             display: true,
-                            text: 'OEE (%)'
+                            text: 'Hours'
                         }
                     }
                 },
@@ -208,12 +397,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Initialize OEE Breakdown Chart
-    const oeeBreakdownCtx = document.getElementById('oeeBreakdown');
-    if (oeeBreakdownCtx) {
-        oeeBreakdownChart = new Chart(oeeBreakdownCtx, {
-            type: 'radar',
-            data: oeeBreakdownData,
+    // Initialize Press Status Chart
+    const pressStatusCtx = document.getElementById('pressStatus');
+    if (pressStatusCtx) {
+        pressStatusChart = new Chart(pressStatusCtx, {
+            type: 'bar',
+            data: pressStatusData,
             options: {
                 responsive: true,
                 maintainAspectRatio: true,
@@ -224,20 +413,29 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     title: {
                         display: true,
-                        text: 'OEE Component Analysis',
+                        text: 'Press Fleet Status - Last 24 Hours',
                         font: {
                             size: 16
                         }
                     }
                 },
                 scales: {
-                    r: {
+                    x: {
+                        stacked: true,
+                    },
+                    y: {
+                        stacked: true,
                         beginAtZero: true,
-                        max: 100,
-                        ticks: {
-                            stepSize: 20
+                        max: 24,
+                        title: {
+                            display: true,
+                            text: 'Hours'
                         }
                     }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
                 }
             }
         });
@@ -277,13 +475,44 @@ function updateETLChart(metric) {
     etlChart.update();
 }
 
-// Function to update OEE Chart
-function updateOEEChart() {
-    if (!oeeChart) return;
+// Function to update Press Chart based on press and metric selection
+function updatePressChart() {
+    if (!pressChart) return;
 
-    const selectedLine = document.getElementById('lineSelect').value;
-    oeeChart.data = oeeData[selectedLine];
-    oeeChart.update();
+    const selectedPress = document.getElementById('pressSelect').value;
+    const selectedMetric = document.getElementById('metricSelect').value;
+
+    // Get the data for the selected press and metric
+    const chartData = pressMetricsData[selectedPress][selectedMetric];
+
+    // Update chart data
+    pressChart.data = chartData;
+
+    // Update chart type and options based on metric
+    if (selectedMetric === 'downtime') {
+        pressChart.config.type = 'bar';
+        pressChart.options.plugins.title.text = 'Downtime Analysis by Category';
+        pressChart.options.scales.x.stacked = true;
+        pressChart.options.scales.y.stacked = true;
+        pressChart.options.scales.y.title.text = 'Hours';
+        delete pressChart.options.scales.y.max;
+    } else if (selectedMetric === 'temperature') {
+        pressChart.config.type = 'line';
+        pressChart.options.plugins.title.text = 'Temperature Monitoring - 24 Hour Cycle';
+        pressChart.options.scales.x.stacked = false;
+        pressChart.options.scales.y.stacked = false;
+        pressChart.options.scales.y.title.text = 'Temperature (°F)';
+        pressChart.options.scales.y.max = 400;
+    } else if (selectedMetric === 'cureTime') {
+        pressChart.config.type = 'line';
+        pressChart.options.plugins.title.text = 'Cure Time Consistency vs Target';
+        pressChart.options.scales.x.stacked = false;
+        pressChart.options.scales.y.stacked = false;
+        pressChart.options.scales.y.title.text = 'Seconds';
+        pressChart.options.scales.y.max = 160;
+    }
+
+    pressChart.update();
 }
 
 // Smooth scroll for navigation links
